@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Available Resources</title></head>
+<body>
+  <h2>Download Excel Files</h2>
+  <ul>
+    {% for file in files %}
+      <li>
+        <a href="https://{{ bucket_name }}.s3.amazonaws.com/{{ file['Key'] }}" target="_blank">
+          {{ file['Key'] }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="/">Back to Home</a>
+</body>
+</html>
